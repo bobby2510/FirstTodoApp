@@ -1,0 +1,23 @@
+{
+  "name": "firsttodoapp",
+  "version": "1.0.0",
+  "description": "First Todo App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobby2510/FirstTodoApp.git"
+  },
+  "author": "coder_bobby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobby2510/FirstTodoApp/issues"
+  },
+  "homepage": "https://github.com/bobby2510/FirstTodoApp#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
