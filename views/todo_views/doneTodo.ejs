@@ -1,0 +1,10 @@
+<h3>Done todos</h3>
+
+<% if(locals.todo_list.length == 0) {%>
+    <p>Current you haven't finsihed Any Target Todos</p>
+<%}else {%>
+    <p> Total Done todos till now : <%= todo_list.length %></p>
+   <% locals.todo_list.forEach((todo) => { %>
+        <p><%= todo.title %></p>
+    <% }) %>
+<%}%>

@@ -1,0 +1,31 @@
+<% if(loggedIn) {%>
+    <h4>Welcome <%= username%>!</h4>
+    <ul>
+        <li><a href="/todo/add">Add todo</a></li>
+        <li><a href="/todo/doneTodos">Done todos</a></li>
+        <li><form action="/logout?_method=DELETE" method="POST">
+            <input type="submit" value="logout">
+            </form>
+        </li>
+    </ul>
+    <h5>Tasks To DO</h5>
+    <% if(locals.todo_list.length == 0) {%>
+        <p>Current you don't have Any Target Todos! Try adding new todos</p>
+    <%}else {%>
+        <p> Total Active todos till now : <%= todo_list.length %></p>
+        <ul>
+       <% locals.todo_list.forEach((todo) => { %>
+         <li>
+            <div style="display: flex; margin:5px;">
+                <span style="margin-right: 10px;"><%= todo.title %></span>
+                <form action="/todo/<%= todo.id %>/delete?_method=DELETE" method="POST"><input type="submit" style="margin-right:10px;" value="Delete"></form>
+                <form action="/todo/<%= todo.id %>/update?_method=PUT" method="POST"><input type="submit" value="Done"></form>
+            </div>
+         </li>
+        <% }) %>
+    </ul>
+    <%}%>
+<%}else{%>
+        <p>You cannot add todos and manage todos without logging In</p>
+        <p>Kindly Register or Login to use our Application!</p>
+    <% } %>
